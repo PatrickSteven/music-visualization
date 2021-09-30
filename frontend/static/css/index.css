@@ -20,3 +20,30 @@
 	/*background-color: rgba(0,0,0,0.25);*/
 }
 
+.grayscale{
+    filter: grayscale(50%)
+}
+
+.grayscale:hover{
+    filter: grayscale(0%)
+}
+
+.container-music-type{
+    margin: 5vh;
+    height: 100vh
+}
+
+.music-selection-title{
+    margin-bottom: 5vh;
+    margin-left: 2vh;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.img-music-type{
+    margin-bottom: 0.5vh;
+}
+
+
