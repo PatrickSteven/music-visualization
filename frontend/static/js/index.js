@@ -1,6 +1,7 @@
 import Dashboard from "./views/Dashboard.js";
 import Music from "./views/Music.js";
 import Songs from "./views/Songs.js";
+import Play from "./views/Play.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -23,7 +24,8 @@ const router = async () => {
         { path: "/", view: Dashboard },
         { path: "/music", view: Music },
         { path: "/songs/:type/:tag/:page", view: Songs },
-        { path: "/songs/:type/:tag", view: Songs }
+        { path: "/songs/:type/:tag", view: Songs },
+        { path: "/play/:name/:author/:imageBg/:imageTb/:audio", view: Play }
     ];
 
     // Test each route for potential match

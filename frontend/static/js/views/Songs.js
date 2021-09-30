@@ -8,6 +8,8 @@ export default class extends AbstractView {
         this.songs = {}
     }
 
+
+
     getSongsFromAPI(){
         const page = this.params.page ? this.params.page : 1;
         const type = this.params.type;
@@ -49,11 +51,18 @@ export default class extends AbstractView {
 
         //Songs details
         this.songs.data.forEach(function(song){ 
-            cardForEachSong +=
 
+            var songhref = "/play/"
+            const imageBg = btoa(song.images.background)
+            const imageTb = btoa(song.images.thumbnail)
+            const audio = btoa(song.audio.find(a => a.name === 'full').url)
+            console.log(audio)
+
+            songhref += song.name + "/" + song.author_name + "/" + imageBg + "/" + imageTb + "/" + audio
+            cardForEachSong +=
             `
                 <div class="card col-sm-6 card-song" style="width: 18rem;">
-                    <a href="#"> 
+                    <a href="${songhref}" class="nav__link" data-link"> 
                         <img src="${song.images.thumbnail}" class="card-img-top img-thumbnail rounded img-song grayscale">
                           <div class="card-body song-card-body text-center">
                             <h5 class="card-title">${song.name}</h5>
@@ -87,12 +96,12 @@ export default class extends AbstractView {
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <li class="page-item ${previousDisabled}">
-                            <a class="page-link" href="/songs/${this.params.type}/${this.params.tag}/${parseInt(currentPage)-1}">Previous</a>
+                            <a class="page-link nav__link" data-link href="/songs/${this.params.type}/${this.params.tag}/${parseInt(currentPage)-1}">Previous</a>
                         </li>
                     <li class="page-item">
-                        <a class="page-link" href="#">${currentPage}</a></li>
+                        <a class="page-link nav__link" data-link href="#">${currentPage}</a></li>
                     <li class="page-item ${nextDisabled}">
-                      <a class="page-link" href="/songs/${this.params.type}/${this.params.tag}/${parseInt(currentPage)+1}">Next</a>
+                      <a class="page-link nav__link" data-link href="/songs/${this.params.type}/${this.params.tag}/${parseInt(currentPage)+1}">Next</a>
                     </li>
                   </ul>
                 </nav>
