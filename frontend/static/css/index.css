@@ -28,6 +28,9 @@
     filter: grayscale(0%)
 }
 
+
+/* Music selection style*/
+
 .container-music-type{
     margin: 5vh;
     height: 100vh
@@ -44,6 +47,38 @@ a:link{
 
 .img-music-type{
     margin-bottom: 0.5vh;
+}
+
+/*Song selection style*/
+
+.container-song{
+    margin: 5vh;
+    min-height: 100vh
+}
+
+.card-song{
+    margin: 1vh;
+    min-height: 20vh;
+    opacity: 0.9;
+}
+
+.card-song:hover{
+    opacity: 1;
+    border-color: #f0ad4e;
+}
+
+
+.img-song{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.songs-header{
+    margin-left: 6vh;
+    margin-top: 5vh;
 }
 
 
