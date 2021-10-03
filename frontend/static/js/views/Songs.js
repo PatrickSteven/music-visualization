@@ -56,7 +56,6 @@ export default class extends AbstractView {
             const imageBg = btoa(song.images.background)
             const imageTb = btoa(song.images.thumbnail)
             const audio = btoa(song.audio.find(a => a.name === 'full').url)
-            console.log(audio)
 
             songhref += song.name + "/" + song.author_name + "/" + imageBg + "/" + imageTb + "/" + audio
             cardForEachSong +=

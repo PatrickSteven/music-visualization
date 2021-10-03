@@ -47,14 +47,15 @@ const router = async () => {
 
     const view = new match.route.view(getParams(match));
     
-    window.onload = function() {
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.src = view.getClientJS();
-        document.head.appendChild(s);
-    }
+    view.getClientJS().forEach(function(js){
+        let script = document.createElement('script');
+        script.type = "text/javascript";
+        script.src = js
+        document.head.appendChild(script);
+    })
 
     document.querySelector("#app").innerHTML = await view.getHtml();
+
 };
 
 window.addEventListener("popstate", router);

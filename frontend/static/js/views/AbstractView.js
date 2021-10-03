@@ -1,7 +1,7 @@
 export default class {
     constructor(params) {
         this.params = params;
-        this.clientJS = '/static/js/default.js'
+        this.clientJS = []
     }
 
     setTitle(title) {
