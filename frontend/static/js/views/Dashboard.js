@@ -21,9 +21,7 @@ export default class extends AbstractView {
                             <hr class="hr-light">
 
                             <!-- Description -->
-                            <h4 class="text-secondary my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Deleniti
-                                consequuntur.</h4>
+                            <h4 class="text-secondary my-4">Curso de Visualizacion de la Informacion</h4>
 
                             <!--Select Song Button --> 
                             <a href="/music" class="nav__link" data-link>
